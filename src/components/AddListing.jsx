@@ -18,28 +18,23 @@ const AddListing = () => {
         const date = e.target.date.value;
         e.target.reset();
 
-        console.log({
-            "product": product,
+        const newProduct = {
+            "name": product,
             "category": category,
             "price": price,
             "location": location,
             "description": description,
-            "imageURL": imageURL,
+            "image": imageURL,
             "email": email,
             "date": date
-        });
+        };
 
-        fetch("https://jsonplaceholder.typicode.com/todos", {
+        fetch("http://localhost:3000/listing", {
             method: "POST",
-            body: JSON.stringify({
-                userId: 1,
-                title: "Fix my bugs",
-                completed: false
-            }),
             headers: {
-                "Content-type": "application/json; charset=UTF-8"
-            }
-            
+                "Content-type": "application/json"
+            },
+            body: JSON.stringify(newProduct)
         });
     }
 

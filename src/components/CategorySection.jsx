@@ -4,35 +4,36 @@ import ServicesCard from './ServicesCard';
 
 
 const CategorySection = () => {
-    const [data, setData] = useState();
+    const [services, setServices] = useState();
 
     useEffect(() => {
-        fetch("/services.json")
+        fetch("http://localhost:3000/listing")
             .then(res => res.json())
-            .then(data => setData(data))
+            .then(data => setServices(data))
             .catch(error => console.log(error));
     }, []);
+
     return (
         <div>
             <div >
                 <h1 className='text-4xl text-center text-blue-900 font-bold my-10'>Category Section</h1>
 
                 {/* 4 category */}
-                <div>
+                {/* <div>
                     <div>
                         {
-                            // data.map(d => <button>"{d.category}"</button>)
+                            services?.map(service => <ServicesCard key={service._id} data={service}></ServicesCard>)
                         }
                     </div>
-                </div>
+                </div> */}
 
                 <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 overflow-x-hidden gap-6 mx-auto'>
                     {
-                        data?.slice(0, 6).map(service => <ServicesCard key={service.serviceId} service={service}></ServicesCard>)
+                        services?.slice(0, 6).map(service => <ServicesCard key={service.serviceId} service={service}></ServicesCard>)
                     }
                 </div>
                 <div className='flex justify-center items-center'>
-                    <Link className='btn btn-primary w-30 mt-6' to={"/services"}>All Services</Link>
+                    <Link className='btn btn-primary w-30 mt-6' to={"/pets&supplies"}>All Services</Link>
                 </div>
             </div>
         </div>
