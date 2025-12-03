@@ -1,7 +1,7 @@
 import { createBrowserRouter } from "react-router";
 import HomeLayout from "../layout/HomeLayout";
 import Home from "../components/Home";
-import Services from "../components/Services";
+
 import My_Profile from "../components/My_Profile";
 import ViewDetails from "../components/ViewDetails";
 import Login from "../components/Login";
@@ -9,6 +9,11 @@ import Register from "../components/Register";
 import PrivateRoutes from "../provider/PrivateRoutes";
 import ForgotPassword from "../components/ForgotPassword";
 import UpdateProfile from "../components/UpdateProfile";
+import PetsSupplies from "../components/Services";
+import AddListing from "../components/AddListing";
+import MyListings from "../components/MyListings";
+import MyOrder from "../components/MyOrder";
+import NotFound from "../components/NotFound";
 
 const router = createBrowserRouter([
     {
@@ -20,8 +25,20 @@ const router = createBrowserRouter([
                 element: <Home></Home>
             },
             {
-               path: "/services",
-               element: <Services></Services>
+               path: "/pets&supplies",
+               element: <PetsSupplies></PetsSupplies>
+            },
+            {
+               path: "/add-listing",
+               element: <AddListing></AddListing>
+            },
+            {
+               path: "/my-listings",
+               element: <MyListings></MyListings>
+            },
+            {
+               path: "/my-order",
+               element: <MyOrder></MyOrder>
             },
             {
                 path: "/my-profile",
@@ -49,6 +66,10 @@ const router = createBrowserRouter([
                 element: <PrivateRoutes><UpdateProfile></UpdateProfile></PrivateRoutes>
             }
         ]
+    },
+    {
+        path: "*",
+        Component: NotFound
     }
 ])
 export default router;

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import ServicesCard from './ServicesCard';
 
-const Services = () => {
+const PetsSupplies = () => {
     const [data, setData] = useState()
     useEffect(() => {
         fetch("/services.json")
@@ -22,4 +22,4 @@ const Services = () => {
     );
 };
 
-export default Services;
+export default PetsSupplies;
