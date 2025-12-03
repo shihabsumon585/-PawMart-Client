@@ -1,0 +1,58 @@
+[
+  {
+    "tipId": 1,
+    "title": "Keep Your Pet Warm Indoors",
+    "shortDescription": "Provide cozy blankets and a warm sleeping area during winter.",
+    "image": "https://i.ibb.co.com/sJ5qphZ7/Keeping-pets-warm-1024x536.png",
+    "details": "Ensure your pet has a soft, warm, and dry resting place away from cold floors and drafts."
+  },
+  {
+    "tipId": 2,
+    "title": "Protect Paws from Cold Surfaces",
+    "shortDescription": "Use paw balms or winter boots to prevent dryness and cracks.",
+    "image": "https://i.ibb.co.com/0pzMzH15/Dog-Boots.jpg",
+    "details": "Snow and ice can damage paws. Clean and moisturize their paws after every walk."
+  },
+  {
+    "tipId": 3,
+    "title": "Provide Proper Winter Nutrition",
+    "shortDescription": "Increase nutrients to maintain energy and body heat.",
+    "image": "https://i.ibb.co.com/tp2r7gS1/winter-nutrition-essentials-guide.jpg",
+    "details": "Pets burn more energy in winter. A balanced diet helps them stay warm and healthy."
+  },
+  {
+    "tipId": 4,
+    "title": "Limit Outdoor Time in Extreme Cold",
+    "shortDescription": "Avoid long exposure to freezing temperatures.",
+    "image": "https://i.ibb.co.com/yF7M3ZmF/125349972.webp",
+    "details": "Short walks are fine, but always monitor pets for shivering or discomfort."
+  },
+  {
+    "tipId": 5,
+    "title": "Groom Your Pet Regularly",
+    "shortDescription": "Keep fur clean and untangled for better insulation.",
+    "image": "https://i.ibb.co.com/214xCKBW/OIP-5.jpg",
+    "details": "Brushing helps distribute natural oils and keeps their coat effective against cold."
+  },
+  {
+    "tipId": 6,
+    "title": "Hydrate Your Pet",
+    "shortDescription": "Ensure fresh water is always available.",
+    "image": "https://i.ibb.co.com/vvxYwbQs/Keep-Your-Pet-Hydrated-With-This-Portable-Bottle.jpg",
+    "details": "Cold weather can dehydrate pets. Warm water can encourage drinking if needed."
+  },
+  {
+    "tipId": 7,
+    "title": "Use Heated Beds or Blankets",
+    "shortDescription": "Provide gentle warmth especially for elderly pets.",
+    "image": "https://i.ibb.co.com/fYBJ9Jz9/OIP-6.jpg",
+    "details": "Monitor the temperature to avoid overheating, and ensure cords are pet-safe."
+  },
+  {
+    "tipId": 8,
+    "title": "Watch for Winter Illnesses",
+    "shortDescription": "Keep an eye on sneezing, coughing, or lethargy.",
+    "image": "https://i.ibb.co.com/gbZ32fpG/risk-of-common-pet-illnesses-in-winter.webp",
+    "details": "Early detection of cold-related illnesses ensures proper care and veterinary support."
+  }
+]

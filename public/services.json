@@ -1,0 +1,110 @@
+[
+  {
+    "serviceId": 1,
+    "serviceName": "Winter Coat Fitting for Dogs",
+    "providerName": "PawCare Studio",
+    "providerEmail": "info@pawcare.com",
+    "price": 25,
+    "rating": 4.9,
+    "slotsAvailable": 4,
+    "description": "Custom coat fitting and warm outfit options to keep your dog comfortable in the cold.",
+    "image": "https://i.ibb.co.com/5XpwfgFb/OIP.jpg",
+    "category": "Clothing"
+  },
+  {
+    "serviceId": 2,
+    "serviceName": "Winter Grooming & Paw Treatment",
+    "providerName": "CozyPets Grooming",
+    "providerEmail": "hello@cozypets.com",
+    "price": 30,
+    "rating": 4.8,
+    "slotsAvailable": 3,
+    "description": "Professional grooming with moisturizing paw balm and winter-safe shampoo.",
+    "image": "https://i.ibb.co.com/jYgHMX0/winter-pet-grooming-tips.jpg",
+    "category": "Grooming"
+  },
+  {
+    "serviceId": 3,
+    "serviceName": "Thermal Bed Setup for Cats",
+    "providerName": "WarmWhiskers Care",
+    "providerEmail": "support@warmwhiskers.com",
+    "price": 18,
+    "rating": 4.7,
+    "slotsAvailable": 5,
+    "description": "Soft, heated cat beds designed to maintain warmth during freezing nights.",
+    "image": "https://i.ibb.co.com/hxMJbLZd/OIP-1.jpg",
+    "category": "Comfort"
+  },
+  {
+    "serviceId": 4,
+    "serviceName": "Winter Health Checkup for Pets",
+    "providerName": "SnowPaws Vet Clinic",
+    "providerEmail": "clinic@snowpaws.com",
+    "price": 40,
+    "rating": 4.9,
+    "slotsAvailable": 2,
+    "description": "Full winter wellness check to ensure your pet stays healthy during the cold months.",
+    "image": "https://i.ibb.co.com/C3DDtYxf/OIP-2.jpg",
+    "category": "Health"
+  },
+  {
+    "serviceId": 5,
+    "serviceName": "Cold-Weather Walking Service",
+    "providerName": "FrostySteps Walkers",
+    "providerEmail": "walk@frostysteps.com",
+    "price": 15,
+    "rating": 4.6,
+    "slotsAvailable": 6,
+    "description": "Guided winter walks with paw-safe boots, warm jackets, and icy-path safety.",
+    "image": "https://i.ibb.co.com/JwB0nVg4/OIP-3.jpg",
+    "category": "Outdoor"
+  },
+  {
+    "serviceId": 6,
+    "serviceName": "Pet Nutrition & Winter Diet Planning",
+    "providerName": "HealthyTails Hub",
+    "providerEmail": "contact@healthytails.com",
+    "price": 20,
+    "rating": 4.8,
+    "slotsAvailable": 3,
+    "description": "Personalized meal plans to strengthen your pet during the cold season.",
+    "image": "https://i.ibb.co.com/GfHXjFJS/OIP-4.jpg",
+    "category": "Nutrition"
+  },
+  {
+    "serviceId": 7,
+    "serviceName": "Warm Sweater Knitting for Small Pets",
+    "providerName": "SnuggleKnit Studio",
+    "providerEmail": "knit@snuggle.com",
+    "price": 22,
+    "rating": 4.7,
+    "slotsAvailable": 4,
+    "description": "Hand-knitted warm sweaters for rabbits, kittens, and small dogs.",
+    "image": "https://i.ibb.co.com/4wTcz2Fz/1486e492-bdfc-4729-9ef9-cf082b170c1d-800x800.webp",
+    "category": "Clothing"
+  },
+  {
+    "serviceId": 8,
+    "serviceName": "Winter Hydration Check & Skin Moisturizing",
+    "providerName": "FurFresh Care",
+    "providerEmail": "care@furfresh.com",
+    "price": 28,
+    "rating": 4.8,
+    "slotsAvailable": 5,
+    "description": "Skin moisture test and winter dryness protection with gentle pet-safe oils.",
+    "image": "https://i.ibb.co.com/wZtC3mYq/iz-QBb9h1o-A3-VLLb-AWAue-A1dog-hydration-winter.jpg",
+    "category": "Health"
+  },
+  {
+    "serviceId": 9,
+    "serviceName": "Winter Boot Fitting for Dogs",
+    "providerName": "SnowStep Pets",
+    "providerEmail": "boots@snowstep.com",
+    "price": 16,
+    "rating": 4.7,
+    "slotsAvailable": 6,
+    "description": "Comfortable anti-slip boots designed to protect paws from frost and ice.",
+    "image": "https://i.ibb.co.com/ZzM8Yv6S/1-Suspender-Boots-Black-Side-600x.webp",
+    "category": "Clothing"
+  }
+]
