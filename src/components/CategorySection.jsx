@@ -19,17 +19,10 @@ const CategorySection = () => {
                 <h1 className='text-4xl text-center text-blue-900 font-bold my-10'>Category Section</h1>
 
                 {/* 4 category */}
-                {/* <div>
-                    <div>
-                        {
-                            services?.map(service => <ServicesCard key={service._id} data={service}></ServicesCard>)
-                        }
-                    </div>
-                </div> */}
-
+                
                 <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 overflow-x-hidden gap-6 mx-auto'>
                     {
-                        services?.slice(0, 6).map(service => <ServicesCard key={service.serviceId} service={service}></ServicesCard>)
+                        services?.slice(0, 6).map(service => <ServicesCard key={service._id} service={service}></ServicesCard>)
                     }
                 </div>
                 <div className='flex justify-center items-center'>

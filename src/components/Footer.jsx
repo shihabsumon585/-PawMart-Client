@@ -4,7 +4,7 @@ import "./Footer.css";
 
 const Footer = () => {
     return (
-        <footer className="pm-footer">
+        <footer className="pm-footer mt-10">
             <div className="pm-footer-container">
                 <div className="pm-footer-col pm-about">
                     <h3 className="pm-logo">PawMart</h3>
