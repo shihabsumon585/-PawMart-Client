@@ -26,9 +26,9 @@ const CategorySection = () => {
     }
 
     return (
-        <div>
-
-            <div className="container mx-auto px-4 pb-16">
+        <div className='bg-[#F2F4F7] pt-2 rounded-4xl pb-6'>
+            {/* 4 category section */}
+            <div className="container mx-auto px-4 pb-16 ">
                 <h2 className="text-4xl text-center text-blue-900 font-bold my-10">
                     Category Section
                 </h2>
@@ -55,7 +55,9 @@ const CategorySection = () => {
                 </div>
             </div>
 
-            <div >
+
+            {/* Recent section */}
+            <div className=''>
                 <h1 className='text-4xl text-center text-blue-900 font-bold my-10'>Recent Listings</h1>
 
                 {/* 4 category */}

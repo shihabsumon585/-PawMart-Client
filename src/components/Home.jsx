@@ -13,6 +13,7 @@ const Home = () => {
     return (
         <div className='space-y-30'>
             <title>Home</title>
+            
             <Swipper></Swipper>
             
             {/* Category Section */}
@@ -21,14 +22,8 @@ const Home = () => {
             {/* Why Adopt from pawmart */}
             <WhyAdoptForm></WhyAdoptForm>
 
-            {/* Pets Care Tips section */}
-            <TipsCare></TipsCare>
-
             {/* Meet Our Experts Vets */}
             <MeetOurPetHeroes></MeetOurPetHeroes>
-
-            {/* Patient Feedback */}
-            <PatientFeedback></PatientFeedback>
         </div>
     );
 };
