@@ -6,11 +6,8 @@ import OrderModal from "../components/OrderModal";
 
 const ListingDetailsPage = () => {
     const { id } = useParams();
-    console.log(id);
     const [listing, setListing] = useState([]);
-    console.log(listing);
     const [isModalOpen, setIsModalOpen] = useState(false);
-
     useEffect(() => {
         fetch(`http://localhost:3000/listing/${id}`)
             .then(res => res.json())
