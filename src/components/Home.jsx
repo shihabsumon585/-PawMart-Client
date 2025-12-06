@@ -6,6 +6,7 @@ import TipsCare from './TipsCare';
 import MeetOurPetHeroes from './MeetOurPetHeroes';
 import PatientFeedback from './PatientFeedback';
 import CategorySection from './CategorySection';
+import WhyAdoptForm from './WhyAdoptForm';
 
 const Home = () => {
 
@@ -15,7 +16,10 @@ const Home = () => {
             <Swipper></Swipper>
             
             {/* Category Section */}
-            <CategorySection></CategorySection>            
+            <CategorySection></CategorySection>
+
+            {/* Why Adopt from pawmart */}
+            <WhyAdoptForm></WhyAdoptForm>
 
             {/* Pets Care Tips section */}
             <TipsCare></TipsCare>

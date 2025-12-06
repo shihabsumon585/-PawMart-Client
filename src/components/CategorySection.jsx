@@ -5,11 +5,12 @@ import ServicesCard from './ServicesCard';
 
 const CategorySection = () => {
     const [services, setServices] = useState();
+    const [categoryDatas, setCategoryDatas] = useState([]);
     const categories = [
         { name: "Pets", icon: "🐶", color: "from-orange-400 to-pink-500" },
-        { name: "Pet Food", icon: "🍖", color: "from-green-400 to-emerald-500" },
+        { name: "Food", icon: "🍖", color: "from-green-400 to-emerald-500" },
         { name: "Accessories", icon: "🧸", color: "from-blue-400 to-cyan-500" },
-        { name: "Pet Care Products", icon: "💊", color: "from-purple-400 to-pink-500" }
+        { name: "Care Products", icon: "💊", color: "from-purple-400 to-pink-500" }
     ];
 
     useEffect(() => {
@@ -18,6 +19,11 @@ const CategorySection = () => {
             .then(data => setServices(data))
             .catch(error => console.log(error));
     }, []);
+    const handleCategory = async (category) => {
+        const res = await fetch(`http://localhost:3000/category-filtered-product/${category}`);
+        const data = await res.json();
+        setCategoryDatas(data);
+    }
 
     return (
         <div>
@@ -26,6 +32,9 @@ const CategorySection = () => {
                 <h2 className="text-4xl text-center text-blue-900 font-bold my-10">
                     Category Section
                 </h2>
+                {
+
+                }
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                     {categories?.map((cat) => (
                         <div
@@ -37,7 +46,7 @@ const CategorySection = () => {
                                     {cat.icon}
                                 </div>
                                 <h3 className="card-title text-2xl">{cat.name}</h3>
-                                <Link to={"/category-filtered-product/:categoryName"} className="btn btn-sm btn-outline border-white text-white hover:bg-white hover:text-gray-800 mt-4">
+                                <Link onClick={() => handleCategory(cat.name)} to={`/category-filtered-product/${cat.name}`} className="btn btn-sm btn-outline border-white text-white hover:bg-white hover:text-gray-800 mt-4">
                                     Explore
                                 </Link>
                             </div>

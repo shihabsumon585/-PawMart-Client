@@ -14,6 +14,7 @@ import AddListing from "../components/AddListing";
 import MyListings from "../components/MyListings";
 import MyOrder from "../components/MyOrder";
 import NotFound from "../components/NotFound";
+import CategoryWiseCard from "../components/CategoryWiseCard";
 
 const router = createBrowserRouter([
     {
@@ -50,6 +51,11 @@ const router = createBrowserRouter([
                 loader: () => fetch("/services.json")
             },
             {
+                path: "/category-filtered-product/:category",
+                loader: ({params}) => fetch(`http://localhost:3000/category-filtered-product/${params.category}`),
+                element: <CategoryWiseCard></CategoryWiseCard>
+            },
+            {
                 path: "/login",
                 element: <Login></Login>
             },
@@ -64,7 +70,7 @@ const router = createBrowserRouter([
             {
                 path: "/update-profile",
                 element: <PrivateRoutes><UpdateProfile></UpdateProfile></PrivateRoutes>
-            }
+            },
         ]
     },
     {
