@@ -71,7 +71,7 @@ const MyListings = () => {
         }
     }
     return (
-        <div className=' mx-auto '>
+        <div className=' mx-auto mt-10'>
             <div className="overflow-x-auto flex justify-center text-center">
                 <table className="table">
                     {/* head */}

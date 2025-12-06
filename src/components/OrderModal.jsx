@@ -32,11 +32,11 @@ const OrderModal = ({ listing, isModalOpen, setIsModalOpen }) => {
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(orderData)
         })
-        .then(res => res.json())
-        .then(() => {
-            setIsModalOpen(false);
-            alert("Order Placed Successfully!");
-        });
+            .then(res => res.json())
+            .then(() => {
+                setIsModalOpen(false);
+                alert("Order Placed Successfully!");
+            });
     };
 
     return (
@@ -49,43 +49,57 @@ const OrderModal = ({ listing, isModalOpen, setIsModalOpen }) => {
 
                     <form onSubmit={handleSubmit} className="space-y-4">
 
+                        <label>User Name</label>
                         <input type="text" value={user?.displayName} className="input input-bordered w-full" readOnly />
+
+                        <label>Email</label>
                         <input type="email" value={user?.email} className="input input-bordered w-full" readOnly />
 
+                        <label>Listing ID</label>
                         <input type="text" value={listing._id} className="input input-bordered w-full" readOnly />
+
+                        <label>Listing Name</label>
                         <input type="text" value={listing.name} className="input input-bordered w-full" readOnly />
 
+                        <label>Quantity</label>
                         <input type="number" value={listing.category === "pet" ? 1 : 1} readOnly className="input input-bordered w-full" />
+
+                        <label>Price</label>
                         <input type="number" value={listing.price} readOnly className="input input-bordered w-full" />
 
-                        <input 
-                            type="text" 
+                        <label>Address</label>
+                        <input
+                            type="text"
                             placeholder="Address"
                             className="input input-bordered w-full"
-                            onChange={(e) => setFormData({...formData, address: e.target.value})}
+                            onChange={(e) => setFormData({ ...formData, address: e.target.value })}
                             required
                         />
 
-                        <input 
+                        <label>Date</label>
+                        <input
                             type="date"
                             className="input input-bordered w-full"
-                            onChange={(e) => setFormData({...formData, date: e.target.value})}
+                            onChange={(e) => setFormData({ ...formData, date: e.target.value })}
                             required
                         />
 
-                        <input 
-                            type="text" 
-                            placeholder="Phone" 
+                        <label>Phone</label>
+                        <input
+                            type="text"
+                            placeholder="Phone"
                             className="input input-bordered w-full"
-                            onChange={(e) => setFormData({...formData, phone: e.target.value})}
+                            onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                             required
                         />
 
-                        <textarea 
-                            className="textarea textarea-bordered w-full" 
+                        <label>Additional Notes</label>
+                        <textarea
+                            className="textarea textarea-bordered w-full"
                             placeholder="Additional Notes"
-                            onChange={(e) => setFormData({...formData, notes: e.target.value})}
+                            onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
                         ></textarea>
+
 
                         <button className="btn btn-primary w-full mt-3 text-lg">
                             Confirm Order
@@ -93,7 +107,7 @@ const OrderModal = ({ listing, isModalOpen, setIsModalOpen }) => {
                     </form>
 
                     <div className="modal-action">
-                        <button 
+                        <button
                             className="btn"
                             onClick={() => setIsModalOpen(false)}
                         >
