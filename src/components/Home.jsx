@@ -1,10 +1,5 @@
-
 import Swipper from './Swipper';
-import ServicesCard from './ServicesCard';
-import { Link } from 'react-router';
-import TipsCare from './TipsCare';
 import MeetOurPetHeroes from './MeetOurPetHeroes';
-import PatientFeedback from './PatientFeedback';
 import CategorySection from './CategorySection';
 import WhyAdoptForm from './WhyAdoptForm';
 

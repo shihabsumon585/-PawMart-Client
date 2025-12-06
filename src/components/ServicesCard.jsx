@@ -21,7 +21,7 @@ const ServicesCard = ({ service }) => {
                     </div>
                 </div>
                 <div className="card-actions justify-end">
-                    <Link to={`/view-details/${service?._id}`} className="btn btn-primary w-full">View Details</Link>
+                    <Link to={`/listing-details/${service?._id}`} className="btn btn-primary w-full">View Details</Link>
                 </div>
             </div>
         </div>
