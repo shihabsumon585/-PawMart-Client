@@ -3,7 +3,7 @@ import Swipper from './Swipper';
 import ServicesCard from './ServicesCard';
 import { Link } from 'react-router';
 import TipsCare from './TipsCare';
-import MeetOurExpertVets from './MeetOurExpertVets';
+import MeetOurPetHeroes from './MeetOurPetHeroes';
 import PatientFeedback from './PatientFeedback';
 import CategorySection from './CategorySection';
 
@@ -21,7 +21,7 @@ const Home = () => {
             <TipsCare></TipsCare>
 
             {/* Meet Our Experts Vets */}
-            <MeetOurExpertVets></MeetOurExpertVets>
+            <MeetOurPetHeroes></MeetOurPetHeroes>
 
             {/* Patient Feedback */}
             <PatientFeedback></PatientFeedback>
