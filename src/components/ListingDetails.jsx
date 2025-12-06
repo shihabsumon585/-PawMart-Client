@@ -18,13 +18,13 @@ const ListingDetails = ({ listing, setIsModalOpen }) => {
                     </h2>
 
                     <p><span className="font-bold">Category:</span> {listing?.category}</p>
-                    <p><span className="font-bold">Owner Email:</span> {listing?.ownerEmail}</p>
+                    <p><span className="font-bold">Owner Email:</span> {listing?.email}</p>
                     <p><span className="font-bold">Location:</span> {listing?.location}</p>
 
                     <p className="leading-7">{listing?.description}</p>
 
                     <p className="text-xl font-bold text-primary">
-                        Price: ${listing?.price}
+                        { listing?.price && `Price: ${listing?.price}`}
                     </p>
 
                     <div className="mt-5">

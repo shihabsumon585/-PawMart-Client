@@ -11,6 +11,19 @@ const OrderModal = ({ listing, isModalOpen, setIsModalOpen }) => {
         notes: ""
     });
 
+// {
+//   "productId": "65488adsfadf5454f",
+//   "productName": "Golden Retriever Puppy",
+//   "buyerName": "Mr. X",
+//   "email": "buyer@gmail.com",
+//   "quantity": 1,
+//   "price": 0,
+//   "address": "Chattogram",
+//   "phone": "017xxxxxxx",
+//   "date": "2025-10-27"
+//   "additionalNotes": "Some Text"
+// }
+
     const handleSubmit = (e) => {
         e.preventDefault();
 
