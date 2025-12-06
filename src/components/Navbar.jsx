@@ -11,9 +11,14 @@ const Navbar = () => {
     const links = <>
         <li><NavLink to={"/"}>Home</NavLink></li>
         <li><NavLink to={"/pets&supplies"}>Pets & Supplies</NavLink></li>
-        <li><NavLink to={"/add-listing"}>Add Listing</NavLink></li>
-        <li><NavLink to={"/my-listings"}>My Listings</NavLink></li>
-        <li><NavLink to={"/my-order"}>My Orders</NavLink></li>
+        {
+            user?.email && <>
+                <li><NavLink to={"/add-listing"}>Add Listing</NavLink></li>
+                <li><NavLink to={"/my-listings"}>My Listings</NavLink></li>
+                <li><NavLink to={"/my-order"}>My Orders</NavLink></li>
+            </>
+        }
+
     </>
 
 
