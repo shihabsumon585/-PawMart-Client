@@ -7,7 +7,7 @@ const PetsSupplies = () => {
     const [searchText, setSearchText] = useState("");
 
     useEffect(() => {
-        fetch("http://localhost:3000/listing")
+        fetch("https://paw-mart-server-bay.vercel.app/listing")
             .then(res => res.json())
             .then(data => setData(data))
             .catch(error => console.log(error));

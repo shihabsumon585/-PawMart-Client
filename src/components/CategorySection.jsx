@@ -15,14 +15,14 @@ const CategorySection = () => {
     ];
 
     useEffect(() => {
-        fetch("http://localhost:3000/listing")
+        fetch("https://paw-mart-server-bay.vercel.app/listing")
             .then(res => res.json())
             .then(data => setServices(data))
             .catch(error => console.log(error));
     }, []);
 
     const handleCategory = async (category) => {
-        const res = await fetch(`http://localhost:3000/category-filtered-product/${category}`);
+        const res = await fetch(`https://paw-mart-server-bay.vercel.app/category-filtered-product/${category}`);
         const data = await res.json();
         console.log(data);
     }

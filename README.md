@@ -3,7 +3,9 @@ PROJECT NAME: PawMart
 PROJECT PURPOSE:
 PawMart is a community-driven platform where pet owners, breeders, and shops can list pets for adoption or sell pet-related products (food, toys, accessories, etc.). Buyers and adopters can browse, contact, and order directly.
 
-LIVE URL: 
+
+Live Website Link Client-side: https://pet-care-in-winter-22ce3.web.app/
+Live Website Link Server-side: https://paw-mart-server-bay.vercel.app/
 
 
 KEY FEATURES:

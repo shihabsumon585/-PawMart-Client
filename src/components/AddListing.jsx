@@ -30,7 +30,7 @@ const AddListing = () => {
             "date": date
         };
 
-        fetch("http://localhost:3000/listing", {
+        fetch("https://paw-mart-server-bay.vercel.app/listing", {
             method: "POST",
             headers: {
                 "Content-type": "application/json"

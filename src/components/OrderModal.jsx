@@ -28,7 +28,7 @@ const OrderModal = ({ listing, isModalOpen, setIsModalOpen }) => {
             notes: formData.notes
         };
 
-        fetch("http://localhost:3000/orders", {
+        fetch("https://paw-mart-server-bay.vercel.app/orders", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(orderData)

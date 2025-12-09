@@ -46,7 +46,7 @@ const MyOrder = () => {
     };
 
     useEffect(() => {
-        fetch(`http://localhost:3000/orders?email=${user?.email}`)
+        fetch(`https://paw-mart-server-bay.vercel.app/orders?email=${user?.email}`)
             .then(res => res.json())
             .then(datas => {
                 setMyDatas(datas)

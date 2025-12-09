@@ -9,7 +9,7 @@ const ListingDetailsPage = () => {
     const [listing, setListing] = useState([]);
     const [isModalOpen, setIsModalOpen] = useState(false);
     useEffect(() => {
-        fetch(`http://localhost:3000/listing/${id}`)
+        fetch(`https://paw-mart-server-bay.vercel.app/listing/${id}`)
             .then(res => res.json())
             .then(data => setListing(data));
     }, [id]);

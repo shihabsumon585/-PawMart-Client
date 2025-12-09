@@ -10,7 +10,7 @@ const MyListings = () => {
     const { user } = useContext(AuthContext);
 
     useEffect(() => {
-        fetch(`http://localhost:3000/listing?email=${user?.email}`)
+        fetch(`https://paw-mart-server-bay.vercel.app/listing?email=${user?.email}`)
             .then(res => res.json())
             .then(data => setMyDatas(data))
     }, [user?.email])
@@ -38,7 +38,7 @@ const MyListings = () => {
 
         const id = selectedData?._id;
 
-        const res = await fetch(`http://localhost:3000/listing/${id}`, {
+        const res = await fetch(`https://paw-mart-server-bay.vercel.app/listing/${id}`, {
             method: "PATCH",
             headers: {
                 "Content-Type": "application/json",
@@ -53,7 +53,7 @@ const MyListings = () => {
     };
 
     const handleDelete = async (id) => {
-        const res = await fetch(`http://localhost:3000/listing/${id}`, {
+        const res = await fetch(`https://paw-mart-server-bay.vercel.app/listing/${id}`, {
             method: "DELETE",
         })
         const data = await res.json();

@@ -43,7 +43,7 @@ const router = createBrowserRouter([
             },
             {
                 path: "/category-filtered-product/:category",
-                loader: ({params}) => fetch(`http://localhost:3000/category-filtered-product/${params.category}`),
+                loader: ({params}) => fetch(`https://paw-mart-server-bay.vercel.app/category-filtered-product/${params.category}`),
                 element: <CategoryWiseCard></CategoryWiseCard>
             },
             {
