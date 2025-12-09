@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../provider/AuthProvider';
-import { Link } from 'react-router';
+import { toast, ToastContainer } from 'react-toastify';
+
 
 const MyListings = () => {
     const [selectedData, setSelectedData] = useState(null);
@@ -23,14 +24,6 @@ const MyListings = () => {
         event.preventDefault();
         console.log(event);
         const form = event.target;
-        // const name = event.target.name.value;
-        // const category = event.target.category.value;
-        // const price = event.target.price.value;
-        // const location = event.target.location.value;
-        // const description = event.target.description.value;
-        // const image = event.target.image.value;
-        // const email = event.target.email.value;
-        // const date = event.target.date.value;
 
         const updatedInfo = {
             name: form.name.value,
@@ -56,6 +49,7 @@ const MyListings = () => {
         const updateList = myDatas.map(myData => myData._id == id ? { ...myData, ...updatedInfo } : myData)
         setMyDatas(updateList);
         document.getElementById("my_modal_5").close();
+        toast("Your information updated!");
     };
 
     const handleDelete = async (id) => {
@@ -66,12 +60,15 @@ const MyListings = () => {
         if (data) {
             const filteredData = myDatas.filter(myData => myData?._id != id)
             setMyDatas(filteredData);
+            toast("Deleted your product...");
         } else {
             alert("Delete failed" + data.message)
         }
     }
     return (
         <div className=' mx-auto mt-10'>
+            <title>My Listing</title>
+            <ToastContainer></ToastContainer>
             <div className="overflow-x-auto flex justify-center text-center">
                 <table className="table">
                     {/* head */}

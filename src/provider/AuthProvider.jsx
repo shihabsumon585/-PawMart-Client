@@ -34,9 +34,6 @@ const AuthProvider = ({children}) => {
     const signInWithGoogle = () => {
         return signInWithPopup(auth, googleProvider);
     }
-    const resetPassword = (email) => {
-        return sendPasswordResetEmail(auth, email);
-    }
     const AuthValue = {
         createUser,
         userLogin,
@@ -47,7 +44,6 @@ const AuthProvider = ({children}) => {
         setUser,
         loading,
         setLoading,
-        resetPassword
     }
     return (
         <AuthContext value={AuthValue}>

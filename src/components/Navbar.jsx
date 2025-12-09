@@ -3,10 +3,10 @@ import logoImg from "../assets/logo.png"
 import { Link, NavLink } from 'react-router';
 import "./Navbar.css"
 import { AuthContext } from '../provider/AuthProvider';
+import ThemeToggle from './ThemeToggle';
 
 const Navbar = () => {
     const { user, logOut } = useContext(AuthContext);
-    // console.log(user?.photoURL);
     const [isOpen, setIsOpen] = useState(false);
     const links = <>
         <li><NavLink to={"/"}>Home</NavLink></li>
@@ -26,7 +26,7 @@ const Navbar = () => {
         logOut();
     }
     return (
-        <div className="navbar bg-base-100 shadow-sm ">
+        <div className="navbar dark:bg-black text-black dark:text-white bg-base-100 shadow-sm ">
             <div className="navbar-start">
                 <div className="dropdown">
                     <button
@@ -56,6 +56,11 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
+
+                <div className='mr-3 flex justify-center items-center'>
+                    <ThemeToggle></ThemeToggle>
+                </div>
+
                 <img title={user?.displayName} className='w-12 mr-4 rounded-4xl object-cover' src={user?.photoURL} alt="" />
                 {user?.email ? <Link onClick={handleLogOut} className="btn btn-primary">Log Out</Link> : <>
                     <Link to={"/login"} className="btn btn-primary">Login</Link>

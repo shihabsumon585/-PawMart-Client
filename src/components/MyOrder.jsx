@@ -1,24 +1,49 @@
-import React, { useContext, useEffect, useRef, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../provider/AuthProvider';
 import { jsPDF } from "jspdf";
-import html2canvas from 'html2canvas';
+import autoTable from 'jspdf-autotable';
 
 const MyOrder = () => {
     const { user } = useContext(AuthContext);
     const [myDatas, setMyDatas] = useState([]);
-    const tableRef = useRef(null);
 
-    const handlePDF = async () => {
-        const element = tableRef.current; 
+    const handlePDF = () => {
+        const doc = new jsPDF();
+        
+        doc.setFontSize(18);
+        doc.text("Order List", 14, 20);
+        doc.setFontSize(11);
+        doc.text(`Generated: ${new Date().toLocaleDateString()}`, 14, 28);
+        const tableData = myDatas.map((myData, index) => [
+            index + 1,
+            myData?.productName || 'N/A',
+            myData?.price ? `$${myData.price}` : 'N/A',
+            myData?.buyerName || 'N/A',
+            `${myData?.address}, ${myData?.phone}`,
+            myData?.quantity || 'N/A',
+            myData?.date || 'N/A'
+        ]);
+        autoTable(doc, {
+            startY: 35,
+            head: [['#', 'Product/Pet', 'Price', 'Buyer', 'Address & Phone', 'Qty', 'Date']],
+            body: tableData,
+            theme: 'grid',
+            styles: { 
+                fontSize: 9,
+                cellPadding: 3,
+            },
+            headStyles: { 
+                fillColor: [87, 13, 248],
+                textColor: 255,
+                fontStyle: 'bold'
+            },
+            alternateRowStyles: {
+                fillColor: [245, 245, 245]
+            }
+        });
 
-        const canvas = await html2canvas(element);
-        const imgData = canvas.toDataURL("image/png");
-
-        const pdf = new jsPDF("p", "mm", "a4");
-        pdf.addImage(imgData, "PNG", 0, 0, 210, 0);
-
-        pdf.save("Order List.pdf"); // kaj hocche na keno?
-    }
+        doc.save("Order_List.pdf");
+    };
 
     useEffect(() => {
         fetch(`http://localhost:3000/orders?email=${user?.email}`)
@@ -29,10 +54,10 @@ const MyOrder = () => {
     }, [user?.email])
 
     return (
-        <div className=' mx-auto mt-10 bg-white' ref={tableRef}>
-            <div className="overflow-x-auto flex justify-center text-center">
-                <table className="table" >
-                    {/* head */}
+        <div className='mx-auto mt-10 bg-white'>
+            <title>My Orders</title>
+            <div className="p-5 w-full bg-white">
+                <table className="table">
                     <thead>
                         <tr>
                             <th>Serial No</th>
@@ -42,33 +67,38 @@ const MyOrder = () => {
                             <th>Date</th>
                         </tr>
                     </thead>
-
-                    {
-                        myDatas.map((myData, index) => <tbody  key={myData._id} >
-                            <tr>
+                    <tbody>
+                        {myDatas.map((myData, index) => (
+                            <tr key={myData._id}>
                                 <th>{index + 1}</th>
                                 <td>
                                     <div className="flex items-center gap-3">
                                         <div>
                                             <div className="font-bold">{myData?.productName}</div>
-                                            <div className="text-sm opacity-50">{myData?.price ? "Price: " : ""}{myData?.price} {myData?.price ? "$" : ""}</div>
+                                            <div className="text-sm opacity-50">
+                                                {myData?.price ? `Price: $${myData.price}` : ""}
+                                            </div>
                                         </div>
                                     </div>
                                 </td>
                                 <td className='flex flex-col justify-start'>
                                     <span className='font-bold'>{myData?.buyerName}</span>
-                                    <span className="badge badge-ghost badge-sm">{myData?.address}, {myData?.phone}</span>
+                                    <span className="badge badge-ghost badge-sm">
+                                        {myData?.address}, {myData?.phone}
+                                    </span>
                                 </td>
-                                <td className=''>{myData?.quantity}</td>
-                                <td className='flex flex-col'>
+                                <td>{myData?.quantity}</td>
+                                <td>
                                     <span>{myData?.date}</span>
                                 </td>
                             </tr>
-                        </tbody>)
-                    }
+                        ))}
+                    </tbody>
                 </table>
             </div>
-            <button onClick={handlePDF} className='btn btn-primary flex justify-center my-5 mx-auto'>Download Report</button>
+            <button onClick={handlePDF} className="btn btn-primary mx-auto my-5 flex">
+                Download Report
+            </button>
         </div>
     );
 };

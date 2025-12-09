@@ -13,40 +13,47 @@ const Login = () => {
     const navigate = useNavigate();
 
     const handleLogIn = (e) => {
-        e.preventDefault();
-        const email = e.target.email.value;
-        const password = e.target.password.value;
-        const hasLowercase = /[a-z]/;
-        const hasUppercase = /[A-Z]/;
-        if (!hasLowercase.test(password)) {
-            return setError("Must have an Lowercase letter in the password")
-        }
-        if (!hasUppercase.test(password)) {
-            return setError("Must have an Uppercase letter in the password")
-        }
-        if (password.length < 6) {
-            return setError("Password must at least 6 character.")
-        }
-        userLogin(email, password)
-            .then((result) => {
-                setUser(result.user);
-                navigate(`${location.state ? location.state : "/"}`);
-                setError("");
-                toast("Login succesfully complete");
-                localStorage.removeItem("email");
-            })
-            .catch(err => {
-                setError(err?.message)
-                toast(err?.message);
-                localStorage.removeItem("email");
-            })
+    e.preventDefault();
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+    const hasLowercase = /[a-z]/;
+    const hasUppercase = /[A-Z]/;
+
+    if (!hasLowercase.test(password)) {
+        return setError("Must have a Lowercase letter in the password");
     }
+    if (!hasUppercase.test(password)) {
+        return setError("Must have an Uppercase letter in the password");
+    }
+    if (password.length < 6) {
+        return setError("Password must be at least 6 characters.");
+    }
+
+    userLogin(email, password)
+        .then((result) => {
+            setUser(result.user);
+            navigate(`${location.state ? location.state : "/"}`);
+
+            setError("");
+
+            toast.success("Login successfully complete");
+
+            localStorage.removeItem("email");
+        })
+        .catch((err) => {
+            setError(err?.message);
+
+            toast.error(err?.message); 
+
+            localStorage.removeItem("email");
+        });
+};
     const handlLoginWithGoggle = () => {
         signInWithGoogle()
             .then((result) => {
                 console.log(result.user);
-                navigate("/");
                 toast("Login succesfully complete");
+                navigate("/");
             }).catch((err) => {
                 console.log(err);
                 setError(err?.message)
@@ -94,7 +101,7 @@ const Login = () => {
                 Login with Google
             </button>
 
-            <p>Dont’t have an account ? <Link className='text-secondary' to={"/register"}>SignUp</Link></p>
+            <p>Dont’t have an account ? <Link className='text-secondary' to={"/register"}>Register</Link> here</p>
         </div>
     );
 };

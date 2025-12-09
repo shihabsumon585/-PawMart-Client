@@ -18,6 +18,7 @@ const ListingDetailsPage = () => {
 
     return (
         <div>
+            
             <ListingDetails 
                 listing={listing}
                 setIsModalOpen={setIsModalOpen}

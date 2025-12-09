@@ -1,5 +1,6 @@
 import React, { useContext, useState } from "react";
 import { AuthContext } from "../provider/AuthProvider";
+import { toast, ToastContainer } from "react-toastify";
 
 const OrderModal = ({ listing, isModalOpen, setIsModalOpen }) => {
     const { user } = useContext(AuthContext);
@@ -35,12 +36,13 @@ const OrderModal = ({ listing, isModalOpen, setIsModalOpen }) => {
             .then(res => res.json())
             .then(() => {
                 setIsModalOpen(false);
-                alert("Order Placed Successfully!");
+                toast("Your order confirm!");
             });
     };
 
     return (
         <>
+            <ToastContainer></ToastContainer>
             <dialog className={`modal ${isModalOpen ? "modal-open" : ""}`}>
                 <div className="modal-box max-w-xl">
                     <h3 className="font-bold text-2xl mb-4 text-center">

@@ -6,6 +6,7 @@ const CategoryWiseCard = () => {
     const loaderDatas = useLoaderData([]);
     return (
         <div>
+            <title>Category Product</title>
             <h1 className='text-center text-blue-900 text-4xl font-bold mt-10'>Total Product ({loaderDatas?.length})</h1>
             <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 overflow-x-hidden gap-6 mx-auto mt-10'>
                 {

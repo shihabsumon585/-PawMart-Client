@@ -3,6 +3,7 @@ import React from "react";
 const ListingDetails = ({ listing, setIsModalOpen }) => {
     return (
         <div className="max-w-3xl mx-auto py-10 px-5">
+            <title>Listing Details</title>
             <div className="card bg-base-100 shadow-xl rounded-2xl">
                 <figure className="h-72">
                     <img 

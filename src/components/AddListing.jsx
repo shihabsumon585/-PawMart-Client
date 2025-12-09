@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../provider/AuthProvider';
+import { toast, ToastContainer } from 'react-toastify';
 
 const AddListing = () => {
 
@@ -36,10 +37,13 @@ const AddListing = () => {
             },
             body: JSON.stringify(newProduct)
         });
+        toast("Your product added...")
     }
 
     return (
         <div>
+            <ToastContainer></ToastContainer>
+            <title>Add Listing</title>
             <h1 className='text-4xl text-blue-900 text-center font-bold mt-10'>Add Listing</h1>
             <form onSubmit={handleAddListing} className="space-y-4 max-w-xl mx-auto bg-white p-6 shadow rounded">
                 {/* Name */}

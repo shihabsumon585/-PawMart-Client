@@ -4,6 +4,7 @@ import ServicesCard from './ServicesCard';
 const PetsSupplies = () => {
     const [data, setData] = useState();
     const [selectedCategory, setSelectedCategory] = useState("");
+    const [searchText, setSearchText] = useState("");
 
     useEffect(() => {
         fetch("http://localhost:3000/listing")
@@ -11,13 +12,25 @@ const PetsSupplies = () => {
             .then(data => setData(data))
             .catch(error => console.log(error));
     }, []);
+
     return (
         <div>
             <title>Pets & Supplies</title>
             <h1 className='text-center text-2xl font-bold my-10'>All Services</h1>
 
-            {/* filtered category */}
-            <div className="flex justify-end mb-6">
+            {/* Search + Category Filter */}
+            <div className="flex justify-between mb-6">
+
+                {/* Search Field */}
+                <input
+                    type="text"
+                    placeholder="Search by name..."
+                    className="input input-bordered w-52"
+                    value={searchText}
+                    onChange={(e) => setSearchText(e.target.value)}
+                />
+
+                {/* Category Filter */}
                 <select
                     className="select select-bordered w-52"
                     value={selectedCategory}
@@ -31,19 +44,22 @@ const PetsSupplies = () => {
                 </select>
             </div>
 
-
-
+            {/* Services List */}
             <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6'>
                 {
                     data
                         ?.filter(item =>
-                            selectedCategory ? item.category === selectedCategory : true
+                            // Category filter
+                            (selectedCategory ? item.category === selectedCategory : true)
+                        )
+                        ?.filter(item =>
+                            // Search filter (case insensitive)
+                            item.name.toLowerCase().includes(searchText.toLowerCase())
                         )
                         ?.map(service => (
                             <ServicesCard key={service._id} service={service} />
                         ))
                 }
-
             </div>
         </div>
     );
